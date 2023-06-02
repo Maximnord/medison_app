@@ -10,16 +10,30 @@
         <div class="bg-white border-gray-500 shadow-md rounded px-8 pt-6 pb-8 mb-4">
             
             
-            <form class="">
-
+            <form class="" method="POST">
+                @csrf
                 <label class="block mt-4 text-gray-700 text-sm font-bold mb-2" for="username">Name</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Name">
+                <input 
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    name="name"
+                    id="name" 
+                    type="text" 
+                    placeholder="Name">
+
                 <label class="block mt-4 text-gray-700 text-sm font-bold mb-2" for="username">ISO</label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Name">
+                <input 
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                    name="iso"
+                    id="iso" 
+                    type="text" 
+                    placeholder="ISO">
                 
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-        Submit
-      </button>
+                <button 
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+                    type="submit"
+                >
+                    Submit
+                </button>
             </form>
         </div>
     </div>
@@ -41,13 +55,21 @@
                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                     @foreach ($countries as $item)
                     <tr>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">{{ $item->id }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                            {{ ++$i }}
+                        </td>
 
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ $item->name }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                            {{ $item->name }}
+                        </td>
 
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">{{ $item->iso }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                            {{ $item->iso }}
+                        </td>
+
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a class="text-blue-500 hover:text-blue-700" href="#">Delete</a>
+                            <a class="text-green-500 font-bold hover:text-green-700 mr-2" href="#">Edit</a>
+                            <a class="text-red-500 font-bold hover:text-red-700" href="#">Delete</a>
                         </td> 
                     </tr>
                     @endforeach
