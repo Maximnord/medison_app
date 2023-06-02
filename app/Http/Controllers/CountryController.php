@@ -15,8 +15,8 @@ class CountryController extends Controller
     public function index()
     {
         //
-        $countries = Country::paginate(5);
-        return view('countries.countries', compact('countries'))->with('i', (request()->input('page', 1) -1) *5);
+        $countries = Country::paginate(15);
+        return view('countries.countries', compact('countries'))->with('i', (request()->input('page', 1) -1) *15);
     }
 
     /**
@@ -38,6 +38,8 @@ class CountryController extends Controller
     public function store(Request $request)
     {
         //
+        Country::create($request->all());
+        return redirect()->back()->with('message', 'Country has been created successfuly!');
     }
 
     /**

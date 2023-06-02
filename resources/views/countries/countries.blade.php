@@ -2,7 +2,17 @@
 @extends('dashboard')
 
 @section('content')
+
+@if (Session::has('message'))
+    <div class="bg-green-200 border rounded border-b border-green-500 text-green-700 px-4 py-3 m-2" role="alert">
+        <p class="font-bold">
+            {{ Session::get('message') }}
+        </p>
+    </div>
+@endif
+
 <div class="grid grid-cols-3">
+    
     <div class="col-span-1 p-2 ">
         <div class="w-full px-6 py-3 border bg-gray-100 rounded-t dark:bg-gray-700">
                 <h1 class="text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400 ">Add country</h1>
