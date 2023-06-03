@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('/countries', CountryController::class);
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('countries', CountryController::class);
+    Route::get('countries/{country}/edit', [CountryController::class, 'edit'])->name('countries.edit');
+});
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/dashboard', function () {

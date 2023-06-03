@@ -62,8 +62,8 @@
                         <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase dark:text-gray-400">Action</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                    @foreach ($countries as $item)
+                    <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                    @forelse ($countries as $item)
                     <tr>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                             {{ ++$i }}
@@ -78,12 +78,29 @@
                         </td>
 
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a class="text-green-500 font-bold hover:text-green-700 mr-2" href="#">Edit</a>
-                            <a class="text-red-500 font-bold hover:text-red-700" href="#">Delete</a>
+                            <form action="{{ route('countries.destroy', $item->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <a class="text-green-500 font-bold hover:text-green-700 mr-2" href="{{ route('countries.edit', $item->id) }}">Edit</a>
+                                <button type="submit" class="text-red-500 font-bold hover:text-red-700 ">Delete</button>
+                            </form>
+                            
+                            {{-- <a class="text-red-500 font-bold hover:text-red-700" href="#">Delete</a> --}}
                         </td> 
                     </tr>
-                    @endforeach
+                    @empty
+                    <tr>
+                        <td colspan="4" class="font-semibold text-center p-3">
+                            No countries in the list...
+                        </td>
+                    </tr>
+                    {{-- <div class="flex justify-center mt-4"> --}}
+                        {{-- {{ $item->links() }} --}}
+                    {{-- </div> --}}
+                    
+                    @endforelse
                 </tbody>
+                
                 </table>
             </div>
             </div>
