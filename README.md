@@ -1,3 +1,16 @@
+## Work Exam For Madison Group
+Requirements:
+- Create App on Laravel version 8 matching to PHP 7.4
+- Add Breeze authentication
+- Chenge Started Page : Login Page
+- Create a routing that can only be accessed by a regstered user
+- Create a Form to insert and save Countries and ISO
+- Create Table with list of created Countries
+- Create CRUD options (i guess it means buttons)
+- Make API restrictions for other overseas users, allow only Israeli API users
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
