@@ -37,6 +37,9 @@
                 >
                     Update
                 </button>
+                <form action="{{ url()->previous() }}" method="GET">
+                    <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold mt-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Cancel</button>
+                </form>
             </form>
         </div>
     </div>
