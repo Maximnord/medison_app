@@ -36,7 +36,8 @@
                     name="iso"
                     id="iso" 
                     type="text" 
-                    placeholder="ISO">
+                    placeholder="ISO"
+                    maxlength="3">
                 
                 <button 
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
@@ -94,14 +95,17 @@
                             No countries in the list...
                         </td>
                     </tr>
-                    {{-- <div class="flex justify-center mt-4"> --}}
-                        {{-- {{ $item->links() }} --}}
-                    {{-- </div> --}}
+                    
                     
                     @endforelse
+                    
                 </tbody>
+                    
                 
                 </table>
+                    <div class="flex justify-center items-end m-4 font-semiboldbold"> 
+                        {{ $countries->links() }}
+                    </div>
             </div>
             </div>
         </div>
