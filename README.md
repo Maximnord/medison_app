@@ -7,7 +7,7 @@ Requirements:
 - Create a Form to insert and save Countries and ISO
 - Create Table with list of created Countries
 - Create CRUD options (i guess it means buttons)
-- Make API restrictions for other overseas users, allow only Israeli API users
+- Make API restrictions for other overseas users excepl israeli addresses, that men to allow only Israeli API users
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
